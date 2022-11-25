@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+    
+  <div>
+    regresar:
+    <a href="{{ url_for('rickandmorty_router.index') }}">Pagina principal</a>
+  </div>
+
+  <h1>Personaje elegido</h1>
+    ID:
+    <h3>{{ personaje.id }}</h3><br>
+    Name:
+    <h3>{{ personaje.name }}</h3><br>
+    Status:
+    <h3>{{ personaje.status }}</h3><br>
+    Species:
+    <h3>{{ personaje.species }}</h3><br>
+    Location:
+    <h3>{{ personaje.location.name }}</h3><br>
+    <img src="{{ personaje.image }}" width="120px" height="120px">
+
+    
+{% endblock %}

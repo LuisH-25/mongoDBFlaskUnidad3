@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Lista de personajes</h1>
+<a href="{{ url_for('rickandmorty_router.obtenerPersonajes') }}">
+    Cagar personajes
+</a>
+<div class = "table-responsive">
+    <table class = "table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>status</th>
+                <th>species</th>
+                <th>location</th>
+                <th>image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for personaje in personajes %}
+            <tr>
+                <td>{{ personaje.id }}</td>
+                <td>{{ personaje.name }}</td>
+                <td>{{ personaje.status }}</td>
+                <td>{{ personaje.species }}</td>
+                <td>{{ personaje.location.name }}</td>
+                <td><img src="{{ personaje.image }}" width="60px" height="60px"></td>
+                <td>
+                  <a
+                    href="{{ url_for('rickandmorty_router.detail_personaje', id=personaje.name) }}"
+                    class="btn btn-warning"
+                    >Detail</a
+                  >
+                </td>
+                <td>
+                    <a
+                      href="{{ url_for('rickandmorty_router.delete_personaje', id=personaje.name) }}"
+                      class="btn btn-danger"
+                      >Delete</a
+                    >
+                  </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+
+
+
+{% endblock content %}
