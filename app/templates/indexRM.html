@@ -27,8 +27,15 @@
                 <td><img src="{{ personaje.image }}" width="60px" height="60px"></td>
                 <td>
                   <a
-                    href="{{ url_for('rickandmorty_router.detail_personaje', id=personaje.id) }}"
+                    href="{{ url_for('rickandmorty_router.vista_actualizar', id=personaje.id) }}"
                     class="btn btn-warning"
+                    >Editar</a
+                  >
+                </td>
+                <td>
+                  <a
+                    href="{{ url_for('rickandmorty_router.detail_personaje', id=personaje.id) }}"
+                    class="btn btn-info"
                     >Detail</a
                   >
                 </td>
@@ -39,6 +46,7 @@
                       >Delete</a
                     >
                   </td>
+                
               </tr>
             {% endfor %}
         </tbody>
