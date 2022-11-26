@@ -1,4 +1,3 @@
-import datetime
 import requests
 
 class RickandMorty:
@@ -20,6 +19,8 @@ class RickandMorty:
           "location" : self.location,
           "image" : self.image
         }
+
+
     def obtenerPersonajes():
         listaPersonajes = []
         for i in range(1,21,1):
